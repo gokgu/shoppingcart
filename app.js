@@ -4,7 +4,7 @@ let products = [];
 let id = 1;
 
 app.use(express.json());
-app.use(express.static('https://lit-citadel-74240.herokuapp.com' + '/public')); //__dir and not _dir
+app.use(express.static(__dir + '/public')); //__dir and not _dir
 
 app.get('/products', (req, res) => {
     res.send(products);
@@ -49,4 +49,5 @@ app.delete('/products/:id', (req, res) => {
     res.send('Rejected');
 })
 
-app.listen(process.env.PORT, () => console.log('Listening 3000...'));
+let port = process.env.PORT || 3000;
+app.listen(port, () => console.log(`Listening ${port}...`));
