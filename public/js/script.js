@@ -6,7 +6,7 @@ let deleteForm = document.querySelector('.delete-product-form');
 
 showBtn.addEventListener('click', function(){
     list.innerHTML = '';
-    fetch('https://nameless-hamlet-92975.herokuapp.com/products')
+    fetch('https://lit-citadel-74240.herokuapp.com/products')
         .then((response) => response.json())
         .then((data) => {
             data.forEach((product) => {
@@ -19,7 +19,7 @@ showBtn.addEventListener('click', function(){
 
 addForm.addEventListener('submit', function(e) {
     e.preventDefault();
-    fetch('https://nameless-hamlet-92975.herokuapp.com/products', {
+    fetch('https://lit-citadel-74240.herokuapp.com/products', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json' 
@@ -35,7 +35,7 @@ addForm.addEventListener('submit', function(e) {
 updateForm.addEventListener('submit', function(e) {
     e.preventDefault();
     let id = document.getElementById('update-product-id').value;
-    fetch('https://nameless-hamlet-92975.herokuapp.com/products/' + id, {
+    fetch('https://lit-citadel-74240.herokuapp.com/products/' + id, {
         method: 'PUT',
         headers: {
             'Content-Type': 'application/json' 
@@ -50,7 +50,7 @@ updateForm.addEventListener('submit', function(e) {
 deleteForm.addEventListener('submit', function(e) {
     e.preventDefault();
     let id = document.getElementById('delete-product-id').value;
-    fetch('https://nameless-hamlet-92975.herokuapp.com/products/' + id, {
+    fetch('https://lit-citadel-74240.herokuapp.com/products/' + id, {
         method: 'DELETE'
     }).then((response) => response.text())
     .then((data) => console.log(data));

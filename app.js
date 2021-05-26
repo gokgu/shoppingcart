@@ -4,7 +4,7 @@ let products = [];
 let id = 1;
 
 app.use(express.json());
-app.use(express.static(__dirname + '/public')); //__dir and not _dir
+app.use(express.static('https://lit-citadel-74240.herokuapp.com' + '/public')); //__dir and not _dir
 
 app.get('/products', (req, res) => {
     res.send(products);
