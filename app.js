@@ -49,4 +49,4 @@ app.delete('/products/:id', (req, res) => {
     res.send('Rejected');
 })
 
-app.listen(3000, () => console.log('Listening 3000...'));
+app.listen(process.env.PORT, () => console.log('Listening 3000...'));
